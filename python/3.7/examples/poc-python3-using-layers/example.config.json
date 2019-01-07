@@ -1,0 +1,30 @@
+{   
+
+    "PG_CONNECTION": "database connection",
+    
+    "region": "ap-southeast-1",
+
+    "vpc":{
+        "securityGroupIds": ["your-sg-id"],
+        "subnetIds": ["your-subnet-id"]
+    },
+
+    
+    "deploymentBucket-name": "your-lambda-bucket",
+    "deploymentBucket-serverSideEncryption": "AES256",
+
+    "iamRoleStatements":[
+        {
+            "Effect": "Allow",
+            "Action": ["s3:PutBucketNotification"],
+            "Resource": [{
+                "Fn::Join":["", ["arn:aws:s3::your-lambda-bucket"]]
+            }]
+        }
+    ],
+
+    "layers1": [
+        "arn:aws:lambda:ap-southeast-1:your-accountid:layer:psycopg2:1",
+        "arn:aws:lambda:ap-southeast-1:your-accountid:layer:requests:1"
+    ]
+}

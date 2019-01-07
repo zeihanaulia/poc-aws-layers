@@ -1,4 +1,4 @@
-# Aws Lambda Layer Warung Pintar
+# Aws Lambda Layer
 
 Aws layer adalah fitur dependency untuk AWS Lambda. Jadi intinya di function tidak perlu lagi menaikan dependency yang membuat file function menjadi besar.
 
